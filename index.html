@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Doorstop Barcode Generator</title>
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?version=0.2">
+<body>
+	<div class="main-container">
+		<div class="container">
+			<div class="main-row row">
+				<div id="output-wrapper">
+					<div id="output-container">
+						<div id="barcode-canvas-wrapper-01" class="flex-wrapper barcode-output-wrapper">
+							<img id="barcode-canvas-01" class="barcode-canvas">
+							<p id="barcode-canvas-label-01" class="barcode-canvas-label">Available</p>
+						</div>
+						<div id="barcode-canvas-wrapper-02" class="flex-wrapper barcode-output-wrapper">
+							<img id="barcode-canvas-02" class="barcode-canvas">
+							<p id="barcode-canvas-label-02" class="barcode-canvas-label">Unavailable</p>
+						</div>
+						<div id="barcode-canvas-wrapper-03" class="flex-wrapper barcode-output-wrapper">
+							<img id="barcode-canvas-03" class="barcode-canvas">
+							<p id="barcode-canvas-label-03" class="barcode-canvas-label">Inside</p>
+						</div>
+						<div id="barcode-canvas-wrapper-04" class="flex-wrapper barcode-output-wrapper">
+							<img id="barcode-canvas-04" class="barcode-canvas">
+							<p id="barcode-canvas-label-04" class="barcode-canvas-label">Outside</p>
+						</div>
+						<div id="barcode-canvas-wrapper-05" class="flex-wrapper barcode-output-wrapper">
+							<img id="barcode-canvas-05" class="barcode-canvas barcode-canvas-large">
+							<p id="barcode-canvas-label-05" class="barcode-canvas-label barcode-canvas-label-large">Escort</p>
+						</div>
+					</div>
+
+					<br>
+					
+					<button id="generate-barcodes">Generate</button>
+					<button id="print-barcodes">Print</button>
+				</div>
+				
+				<div id="input-container">
+					<div id="barcode-input-wrapper-01" class="input-wrapper">
+						<div class="barcode-input-wrapper">
+							<label for="barcode-input-01">Barcode #1</label>
+							<input type="text" id="barcode-label-01" name="barcode-label-01" class="barcode-label" targetId="01"
+								value="Available">
+							<input type="text" id="barcode-input-01" name="barcode-input-01" class="barcode-input barcode-input-text"
+								targetId="01" value="10001" disabled>
+							<select id="barcode-select-01" name="barcode-select-01" class="barcode-input barcode-select"
+								targetId="01" default="Available"></select>
+						</div>
+					
+						<div class="checkbox-container">
+							<div class="checkbox-wrapper">
+								<input type="checkbox" id="barcode-input-checkbox-01" name="barcode-input-checkbox-01"
+									class="barcode-input-checkbox" targetId="01">
+								<label for="barcode-input-checkbox-01">Custom Data</label>
+							</div>
+							<div class="checkbox-wrapper">
+								<input type="checkbox" id="barcode-size-checkbox-01" name="barcode-size-checkbox-01"
+									class="barcode-size-checkbox" targetId="01">
+								<label for="barcode-size-checkbox-01">Large Barcode</label>
+							</div>
+						</div>
+					</div>
+
+					<hr>
+
+					<div id="barcode-input-wrapper-02" class="input-wrapper">
+						<div class="barcode-input-wrapper">
+							<label for="barcode-input-02">Barcode #2</label>
+							<input type="text" id="barcode-label-02" name="barcode-label-02" class="barcode-label" targetId="02"
+								value="Unavailable">
+							<input type="text" id="barcode-input-02" name="barcode-input-02" class="barcode-input barcode-input-text"
+								targetId="02" value="10002" disabled>
+							<select id="barcode-select-02" name="barcode-select-02" class="barcode-input barcode-select"
+								targetId="02" default="Unavailable"></select>
+						</div>
+					
+						<div class="checkbox-container">
+							<div class="checkbox-wrapper">
+								<input type="checkbox" id="barcode-input-checkbox-02" name="barcode-input-checkbox-02"
+									class="barcode-input-checkbox" targetId="02">
+								<label for="barcode-input-checkbox-02">Custom Data</label>
+							</div>
+							<div class="checkbox-wrapper">
+								<input type="checkbox" id="barcode-size-checkbox-02" name="barcode-size-checkbox-02"
+									class="barcode-size-checkbox" targetId="02">
+								<label for="barcode-size-checkbox-02">Large Barcode</label>
+							</div>
+						</div>
+					</div>
+
+					<hr>
+
+					<div id="barcode-input-wrapper-03" class="input-wrapper">
+						<div class="barcode-input-wrapper">
+							<label for="barcode-input-03">Barcode #3</label>
+							<input type="text" id="barcode-label-03" name="barcode-label-03" class="barcode-label" targetId="03"
+								value="Inside">
+							<input type="text" id="barcode-input-03" name="barcode-input-03" class="barcode-input barcode-input-text"
+								targetId="03" value="10003" disabled>
+							<select id="barcode-select-03" name="barcode-select-03" class="barcode-input barcode-select"
+								targetId="03" default="Inside"></select>
+						</div>
+					
+						<div class="checkbox-container">
+							<div class="checkbox-wrapper">
+								<input type="checkbox" id="barcode-input-checkbox-03" name="barcode-input-checkbox-03"
+									class="barcode-input-checkbox" targetId="03">
+								<label for="barcode-input-checkbox-03">Custom Data</label>
+							</div>
+							<div class="checkbox-wrapper">
+								<input type="checkbox" id="barcode-size-checkbox-03" name="barcode-size-checkbox-03"
+									class="barcode-size-checkbox" targetId="03">
+								<label for="barcode-size-checkbox-03">Large Barcode</label>
+							</div>
+						</div>
+					</div>
+
+					<hr>
+
+					<div id="barcode-input-wrapper-04" class="input-wrapper">
+						<div class="barcode-input-wrapper">
+							<label for="barcode-input-04">Barcode #4</label>
+							<input type="text" id="barcode-label-04" name="barcode-label-04" class="barcode-label" targetId="04"
+								value="Outside">
+							<input type="text" id="barcode-input-04" name="barcode-input-04" class="barcode-input barcode-input-text"
+								targetId="04" value="10004" disabled>
+							<select id="barcode-select-04" name="barcode-select-04" class="barcode-input barcode-select"
+								targetId="04" default="Outside"></select>
+						</div>
+					
+						<div class="checkbox-container">
+							<div class="checkbox-wrapper">
+								<input type="checkbox" id="barcode-input-checkbox-04" name="barcode-input-checkbox-04"
+									class="barcode-input-checkbox" targetId="04">
+								<label for="barcode-input-checkbox-04">Custom Data</label>
+							</div>
+							<div class="checkbox-wrapper">
+								<input type="checkbox" id="barcode-size-checkbox-04" name="barcode-size-checkbox-04"
+									class="barcode-size-checkbox" targetId="04">
+								<label for="barcode-size-checkbox-04">Large Barcode</label>
+							</div>
+						</div>
+					</div>
+
+					<hr>
+
+					<div id="barcode-input-wrapper-05" class="input-wrapper">
+						<div class="barcode-input-wrapper">
+							<label for="barcode-input-05">Barcode #5</label>
+							<input type="text" id="barcode-label-05" name="barcode-label-05" class="barcode-label" targetId="05"
+								value="Escort">
+							<input type="text" id="barcode-input-05" name="barcode-input-05" class="barcode-input barcode-input-text"
+								targetId="05" value="MDAwMDAwfDluNFdaMUkvdEJFb2N0VkxnMHZ2QWc9PQ==" disabled>
+							<select id="barcode-select-05" name="barcode-select-05" class="barcode-input barcode-select"
+								targetId="05" default="Escort"></select>
+						</div>
+					
+						<div class="checkbox-container">
+							<div class="checkbox-wrapper">
+								<input type="checkbox" id="barcode-input-checkbox-05" name="barcode-input-checkbox-05"
+									class="barcode-input-checkbox" targetId="05">
+								<label for="barcode-input-checkbox-05">Custom Data</label>
+							</div>
+							<div class="checkbox-wrapper">
+								<input type="checkbox" id="barcode-size-checkbox-05" name="barcode-size-checkbox-05"
+									class="barcode-size-checkbox" targetId="05" checked>
+								<label for="barcode-size-checkbox-05">Large Barcode</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="js/bwip-js-min.js"></script>
+<script type="text/javascript" src="js/codes.js?version=0.2"></script>
+<script type="text/javascript" src="js/main.js?version=0.2"></script>
+</html>

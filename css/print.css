@@ -1,0 +1,69 @@
+* {
+	box-sizing: border-box;
+}
+
+.flex-wrapper {
+	flex-grow: 1;
+}
+
+.barcode-input-wrapper {
+	margin-bottom: 8px;
+}
+
+p {
+	font-family: 'Roboto', sans-serif;
+}
+
+.barcode-canvas {
+	height: 40px;
+	width: 40px;
+	margin-left: 10px;
+}
+
+.barcode-canvas-large {
+	height: 52px;
+	width: 52px;
+	margin-left: 10px;
+}
+
+.barcode-canvas-label-large {
+	left: 16px !important;
+}
+
+.barcode-input:disabled,
+.barcode-input-checkbox:disabled {
+	display: none;
+}
+
+#output-container {
+	border: 1px solid rgba(0,0,0,0.1);
+	min-width: 72px;
+	width: 72px;
+	min-height: 250px;
+	height: 250px;
+	display: flex;
+	flex-direction: column;
+}
+
+.barcode-output-wrapper {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.barcode-canvas-label {
+	font-family: 'Teko', sans-serif;
+	font-size: 11px;
+	margin: 0;
+	white-space: nowrap;
+	text-transform: uppercase;
+	text-align: left;
+	font-weight: 900;
+	writing-mode: vertical-lr;
+	transform: translateY(-50%) translateX(-100%) scale(var(--s, 1));
+	--s: -1;
+	position: absolute;
+	left: 20px;
+	top: 50%;
+}
