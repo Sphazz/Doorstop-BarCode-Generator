@@ -189,6 +189,11 @@ button:focus {
 	outline: none;
 }
 
+button:disabled {
+	background-color: rgba(200, 200, 200, 1);
+	border: 1px solid rgba(180, 180, 180, 0.8);
+}
+
 input[type="checkbox"] {
 	height: 1.1em;
 	width: 1.1em;
@@ -295,4 +300,8 @@ br {
 	--s: -1;
 	position: absolute;
 	left: 20px;
+}
+
+#add-barcode {
+	margin-top: 68px;
 }
