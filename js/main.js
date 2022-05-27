@@ -175,20 +175,6 @@ function populateSelect(arr, select, typeValue) {
 }
 populateSelect(codes, barcodeSelect, "General");
 
-function printBarcodes() {
-	var divContents = document.getElementById("output-container").innerHTML;
-	var a = window.open('', '', 'height=600, width=600');
-	a.document.write('<html><title>Doorstop Barcode Generator - Print</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin >	<link href="https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/print.css?version=0.2" media="all"><body><div id="output-container">');
-	a.document.write(divContents);
-	a.document.write('</body></html>');
-	a.document.close();
-	setTimeout(function () { a.print(); }, 400);
-}
-
-document.querySelector("#print-barcodes").onclick = function () {
-	printBarcodes();
-}
-
 document.querySelector("#add-barcode").onclick = function () {
 	if (count == max)
 		return;
@@ -235,7 +221,7 @@ document.querySelector("#remove-barcode").onclick = function () {
 		document.querySelector("#remove-barcode").setAttribute("disabled", "true");
 }
 
-function generateBarcodes(barcodeInput) {
+function generateBarcodes() {
 	var barcodeInput = document.querySelectorAll(".barcode-input");
 	barcodeInput.forEach(function (data) {
 		if (!data.disabled)
@@ -266,8 +252,22 @@ function generateBarcode(data) {
 }
 
 document.querySelector("#generate-barcodes").onclick = function () {
-	var barcodeInput = document.querySelectorAll(".barcode-input");
-	generateBarcodes(barcodeInput);
+	generateBarcodes();
 }
 
 generateBarcodes();
+
+function printBarcodes() {
+	var divContents = document.getElementById("output-container").innerHTML;
+	var a = window.open('', '', 'height=600, width=600');
+	a.document.write('<html><title>Doorstop Barcode Generator - Print</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin >	<link href="https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/print.css?version=0.2" media="all"><body><div id="output-container">');
+	a.document.write(divContents);
+	a.document.write('</body></html>');
+	a.document.close();
+	setTimeout(function () { a.print(); }, 400);
+}
+
+document.querySelector("#print-barcodes").onclick = function () {
+	generateBarcodes();
+	printBarcodes();
+}
